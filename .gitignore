@@ -1,0 +1,16 @@
+
+vol-persistence/\.settings/
+
+vol-persistence/target/
+
+vol-persistence/\.classpath
+
+vol-persistence/\.project
+
+vol-web/\.settings/
+
+vol-web/target/
+
+vol-web/\.classpath
+
+vol-web/\.project
