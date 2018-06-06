@@ -16,14 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import vol.model.Login;
-import vol.repository.LoginDao;
+import vol.model.Client;
+import vol.model.ClientEI;
+import vol.model.ClientPhysique;
+import vol.repository.ClientDao;
 
 @Controller
-@RequestMapping("/login")
-public class loginController {
+@RequestMapping("/clientE")
+public class ClientEController {
 	@Autowired
-	private LoginDao loginDao;
+	private ClientDao clientDao;
 
 	@GetMapping("/")
 	public String home() {
@@ -32,39 +34,39 @@ public class loginController {
 
 	@GetMapping("/list")
 	public String list(Model model) {
-		List<Login> liste = loginDao.findAll();
+		List<Client> liste = clientDao.findAll();
 
-		model.addAttribute("logins", liste);
+		model.addAttribute("Clients", liste);
 
-		return "login/list";
+		return "clientE/list";
 	}
 
 	@GetMapping("/add")
 	public ModelAndView add() {
-		return new ModelAndView("/login/edit", "login", new Login());
+		return new ModelAndView("/clientE/edit", "clientE", new ClientEI());
 	}
 
 	@GetMapping("/edit")
 	public String edit(@RequestParam Long id, Model model) {
-		Optional<Login> login = loginDao.findById(id);
+		Optional<Client> client = clientDao.findById(id);
 
-		if (login.isPresent()) {
-			model.addAttribute("login", login.get());
+		if (client.isPresent()) {
+			model.addAttribute("client", client.get());
 		} else {
-			model.addAttribute("login", new Login());
+			model.addAttribute("client", new ClientEI() );
 		}
 
-		return "/login/edit";
+		return "/clientE/edit";
 	}
 
 	@PostMapping("/save")
-	public String save(@Valid @ModelAttribute("login") Login login, BindingResult result) {
+	public String save(@Valid @ModelAttribute("clientE") ClientEI client, BindingResult result) {
 
 		if (result.hasErrors()) {
-			return "/login/edit";
+			return "/clientE/edit";
 		}
 
-		loginDao.save(login);
+		clientDao.save(client);
 
 		return "redirect:list";
 	}
@@ -72,7 +74,7 @@ public class loginController {
 	@GetMapping("/delete")
 	public String delete(@RequestParam Long id) {
 
-		loginDao.deleteById(id);
+		clientDao.deleteById(id);
 
 		return "forward:list";
 	}

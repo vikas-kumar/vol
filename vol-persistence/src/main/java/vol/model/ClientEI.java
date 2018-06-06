@@ -5,12 +5,14 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @DiscriminatorValue("EI")
 public class ClientEI extends Client {
 
 	private TitrePhysique titre;
+	@NotNull(message="obligatoire")
 	private String prenom;
 	
 	public ClientEI() {
