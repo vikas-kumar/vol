@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "passager")
@@ -39,6 +41,10 @@ public class Passager {
 	}
 
 	@Column(name = "nom", length = 50)
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
+	@NotEmpty(message = "{passager.edit.nom.required}")
+	@Pattern(regexp = "^[A-Z].*$", message = "{passager.edit.nom.pattern}")
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
 	public String getNom() {
 		return nom;
 	}
@@ -48,6 +54,10 @@ public class Passager {
 	}
 
 	@Column(name = "prenom", length = 50)
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
+	@NotEmpty(message = "{passager.edit.prenom.required}")
+	@Pattern(regexp = "^[A-Z].*$", message = "{passager.edit.prenom.pattern}")
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
 	public String getPrenom() {
 		return prenom;
 	}
