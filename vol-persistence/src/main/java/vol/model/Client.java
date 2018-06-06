@@ -19,6 +19,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="client")
@@ -27,9 +30,14 @@ import javax.persistence.Version;
 public abstract class Client {
 
 	private Long id;
+	@NotNull(message="obligatoire")
+	@Size(min=3, max=20)
 	private String nom;
+	@NotNull(message="obligatoire")
+	@Size(min=10, max=10)
 	private String numeroTel;
 	private String numeroFax;
+	@NotNull(message="obligatoire")
 	private String email;
 	private Login login;
 	private Adresse adresse;
