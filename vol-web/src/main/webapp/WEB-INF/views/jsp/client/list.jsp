@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,20 +9,22 @@
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <script src="<c:url value="/js/jquery.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-<title><spring:message code="client.list.title"/></title>
+<title><spring:message code="client.list.title" /></title>
 </head>
 <body>
-<div class="container">
-		<h2><spring:message code="client.list.table"/></h2>
+	<div class="container">
+		<h2>
+			<spring:message code="client.list.table" />
+		</h2>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th><spring:message code="client.list.id"/></th>
-					<th><spring:message code="client.list.nom"/></th>
-					<th><spring:message code="client.list.prenom"/></th>
-					<th><spring:message code="client.list.numeroTel"/></th>
-					<th><spring:message code="client.list.numeroFax"/></th>
-					<th><spring:message code="client.list.email"/></th>
+					<th><spring:message code="client.list.id" /></th>
+					<th><spring:message code="client.list.nom" /></th>
+					<th><spring:message code="client.list.prenom" /></th>
+					<th><spring:message code="client.list.numeroTel" /></th>
+					<th><spring:message code="client.list.numeroFax" /></th>
+					<th><spring:message code="client.list.email" /></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -41,14 +43,17 @@
 						<td>${client.numeroTel}</td>
 						<td>${client.numeroFax}</td>
 						<td>${client.email}</td>
-						<td><a class="btn btn-primary btn-xs" href="${editUrl}"><span class="glyphicon glyphicon-pencil"></span></a><a class="btn btn-danger btn-xs" href="${deleteUrl}"><span class="glyphicon glyphicon-trash"></span></a></td>
+						<td><a class="btn btn-primary btn-xs" href="${editUrl}"><span
+								class="glyphicon glyphicon-pencil"></span></a><a
+							class="btn btn-danger btn-xs" href="${deleteUrl}"><span
+								class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 
-		<a class="btn btn-info btn-md" href="<c:url value="/client/add"/>"> <span
-			class="glyphicon glyphicon-plus"></span>
+		<a class="btn btn-info btn-md" href="<c:url value="/client/add"/>">
+			<span class="glyphicon glyphicon-plus"></span>
 		</a>
 	</div>
 </body>
