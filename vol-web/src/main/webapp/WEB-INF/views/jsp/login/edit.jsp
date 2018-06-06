@@ -25,11 +25,11 @@
 				<form:errors path="login" class="help-block"/>
 				 </div>
 				 <div class="form-group">
-				<form:label path="mdp"><spring:message code="login.edit.mdp"/>:</form:label> <form:input type="text" class="form-control" path="mdp"/>
-				<form:errors path="mdp" class="help-block"/>
+				<form:label path="motDePasse"><spring:message code="login.edit.motDePasse"/>:</form:label> <form:input type="text" class="form-control" path="motDePasse"/>
+				<form:errors path="motDePasse" class="help-block"/>
 				</div>
 				 <div class="form-group">
-				<form:label path="admin"><spring:message code="login.edit.admin"/>:</form:label> <form:input type="number" class="form-control" path="admin"/> 
+				<form:label path="admin"><spring:message code="login.edit.admin"/>:</form:label> <form:input type="boolean" class="form-control" path="admin"/> 
 				<form:errors path="admin" class="help-block"/>
 				</div>
 				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button>

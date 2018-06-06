@@ -5,12 +5,16 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @DiscriminatorValue("Physique")
 public class ClientPhysique extends Client {
 
 	private TitrePhysique titre;
+	@NotNull
+	@Size(min=3, max=20)
 	private String prenom;
 
 	public ClientPhysique() {

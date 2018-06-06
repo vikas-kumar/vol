@@ -8,14 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "login")
 public class Login {
 
 	private Long id;
+	@NotNull
+	@Size(min=3, max=20)
 	private String login;
+	@NotNull
+	@Size(min=3, max=20)
 	private String motDePasse;
+	@NotNull
 	private boolean admin;
 	private int version;
 	private Client client;
