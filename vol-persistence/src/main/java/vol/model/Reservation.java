@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -47,7 +48,7 @@ public class Reservation {
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	// -------------------------------------------------------------------------------------------------------------------------------------------------
-//	@NotEmpty(message = "{reservation.edit.date.required}")
+	@NotNull(message = "{reservation.edit.date.required}")
 //	@Pattern(regexp = "^[A-Z].*$", message = "{reservation.edit.rdate.pattern}")
 	// -------------------------------------------------------------------------------------------------------------------------------------------------
 	public Date getDate() {
