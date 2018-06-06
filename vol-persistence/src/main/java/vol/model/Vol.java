@@ -15,6 +15,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name="Vol")
@@ -45,7 +51,10 @@ public class Vol {
 	}
 
 	@Column(name="date_depart")
+	@NotNull(message = "{vol.edit.dateDepart.required}")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
+	
 	public Date getDateDepart() {
 		return dateDepart;
 	}
@@ -55,6 +64,8 @@ public class Vol {
 	}
 
 	@Column(name="date_arrivee")
+	@NotNull(message = "{vol.edit.dateArrivee.required}")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	public Date getDateArrivee() {
 		return dateArrivee;
@@ -65,6 +76,8 @@ public class Vol {
 	}
 
 	@Column(name="heure_depart")
+	@NotNull(message = "{vol.edit.heureDepart.required}")
+	@DateTimeFormat(pattern="hh:mm")
 	@Temporal(TemporalType.TIME)
 	public Date getHeureDepart() {
 		return heureDepart;
@@ -75,6 +88,8 @@ public class Vol {
 	}
 
 	@Column(name="heure_arrivee")
+	@NotNull(message = "{vol.edit.heureArrivee.required}")
+	@DateTimeFormat(pattern="hh:mm")
 	@Temporal(TemporalType.TIME)
 	public Date getHeureArrivee() {
 		return heureArrivee;
