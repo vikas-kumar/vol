@@ -13,6 +13,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "reservation")
@@ -40,7 +44,12 @@ public class Reservation {
 	}
 
 	@Column(name = "rdate")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
+//	@NotEmpty(message = "{reservation.edit.date.required}")
+//	@Pattern(regexp = "^[A-Z].*$", message = "{reservation.edit.rdate.pattern}")
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
 	public Date getDate() {
 		return date;
 	}
