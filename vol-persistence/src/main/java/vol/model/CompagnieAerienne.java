@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="compagnie_aerienne")
@@ -34,6 +36,8 @@ public class CompagnieAerienne {
 	}
 
 	@Column(name="nom", length=50)
+	@NotEmpty(message = "{compagnieAerienne.edit.nom.required}")
+	@Pattern(regexp="^[A-Z].*$", message="{compagnieAerienne.edit.nom.pattern}")
 	public String getNom() {
 		return nom;
 	}
