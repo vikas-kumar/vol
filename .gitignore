@@ -14,3 +14,5 @@ vol-web/target/
 vol-web/\.classpath
 
 vol-web/\.project
+
+vol-web/src/main/resources/locale/messages_fr_login\.properties
