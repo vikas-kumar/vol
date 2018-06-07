@@ -31,17 +31,17 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="/vol-web/ville/list/"><spring:message
+						<li><a href="/vol-web/ville/list/"><spring:message
 									code="nav.ville" /></a></li>
 						<li><a href="/vol-web/aeroport/list/"><spring:message
 									code="nav.aeroport" /></a></li>
 						<li><a href="/vol-web/passager/list/"><spring:message
 									code="nav.passager" /></a></li>
-						<li><a href="/vol-web/compagnieaerienne/list/"><spring:message code="nav.compagnieaerienne" /><span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="/vol-web/compagnieaerienne/list/"><spring:message code="nav.compagnieaerienne" /><span class="sr-only">(current)</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/vol-web/ville/list/?lang=en">En</a></li>
-						<li><a href="/vol-web/ville/list/?lang=fr">Fr</a></li>
+						<li><a href="/vol-web/compagnieaerienne/list/?lang=en">En</a></li>
+						<li><a href="/vol-web/compagnieaerienne/list/?lang=fr">Fr</a></li>
 					</ul>
 				</div>
 			</div>

@@ -35,6 +35,8 @@
 				<li class="active"><a href="/vol-web/ville/list/"><spring:message code="nav.ville"/><span class="sr-only">(current)</span></a></li>
 				<li><a href="/vol-web/aeroport/list/"><spring:message code="nav.aeroport"/></a></li>
 				<li><a href="/vol-web/passager/list/"><spring:message code="nav.passager"/></a></li>
+				<li><a href="/vol-web/compagnieaerienne/list/"><spring:message
+								code="nav.compagnieaerienne" /><span class="sr-only"></span></a></li>
 			  </ul>
 			  <ul class="nav navbar-nav navbar-right">
 				<li><a href="/vol-web/ville/add/?lang=en">En</a></li>
